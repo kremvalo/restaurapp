@@ -139,7 +139,7 @@ node_modules
 /packages/react-native/sdks/hermes-engine/hermes-engine-from-local-source-dir.tar.gz
 
 # IOS
-ios/Pods
+/ios/Pods
 
 # Visual studio
 .vscode
