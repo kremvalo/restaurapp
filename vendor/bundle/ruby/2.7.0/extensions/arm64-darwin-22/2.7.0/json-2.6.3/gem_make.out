@@ -1,0 +1,13 @@
+current directory: /Users/karenmoreno/Desktop/Pruebas Tecnicas/Tenpo/Restarapp/vendor/bundle/ruby/2.7.0/gems/json-2.6.3/ext/json
+/Users/karenmoreno/.rbenv/versions/2.7.5/bin/ruby -I /Users/karenmoreno/.rbenv/versions/2.7.5/lib/ruby/2.7.0 -r ./siteconf20230925-98511-1jk5dgx.rb extconf.rb
+creating Makefile
+
+current directory: /Users/karenmoreno/Desktop/Pruebas Tecnicas/Tenpo/Restarapp/vendor/bundle/ruby/2.7.0/gems/json-2.6.3/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/karenmoreno/Desktop/Pruebas Tecnicas/Tenpo/Restarapp/vendor/bundle/ruby/2.7.0/gems/json-2.6.3/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/karenmoreno/Desktop/Pruebas Tecnicas/Tenpo/Restarapp/vendor/bundle/ruby/2.7.0/gems/json-2.6.3/ext/json
+make "DESTDIR=" install
