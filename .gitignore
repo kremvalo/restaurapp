@@ -37,3 +37,7 @@ Backup[ ]of[ ]*.numbers/
 
 # iOS / CocoaPods
 Pods/
+Pods
+node_modules
+ios/Pods
+ios/pods
