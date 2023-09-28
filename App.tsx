@@ -1,5 +1,7 @@
 import React from 'react';
-import Home from './src/framework/presentation/components/home';
+import Home from './src/framework/presentation/views/screens/home';
+import 'react-native-gesture-handler';
+
 
 const App = () => {
   return (
