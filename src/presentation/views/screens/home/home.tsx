@@ -69,16 +69,18 @@ const Home: React.FC = () => {
 
   const productsSlides: React.ReactNode[] = [
     <ProductCard key={1}
-      sourceImage={Images.hambugerCategory}
-      title='HAMBURGESAS'
+      sourceImage={Images.hamburguer}
+      title='Combo Hamburguesa Bigmac'
+      rate={3.5}
+      time='10-15 min.'
+      brand='Mcdonalds'
     />,
     <ProductCard key={1}
-      sourceImage={Images.pizzasCategory}
-      title='PIZZAS'
-    />,
-    <ProductCard key={1}
-      sourceImage={Images.italianCategory}
-      title='ITALIANA'
+      sourceImage={Images.pizza}
+      title='Pizza Mediana 3 Ingredientes'
+      rate={3.5}
+      time='10-15 min.'
+      brand='MELT Pizzas'
     />
   ]
 
@@ -114,7 +116,7 @@ const Home: React.FC = () => {
             <CustomCarousel
               data={productsSlides}
               itemsPerScreen={2}
-              height={width / 3}
+              height={width / 2.8}
             />
           </InfoWrapper>
         </AddressWrapper>

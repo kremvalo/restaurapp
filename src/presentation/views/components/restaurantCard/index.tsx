@@ -1,9 +1,9 @@
 import React from 'react'
-import { type ImageSourcePropType, Text } from 'react-native'
+import { type ImageSourcePropType } from 'react-native'
 
-import { Images } from '../../../../themes'
+import Rate from '../rate'
 
-import { Card, BrandImage, DiscountWrapper, RateTimeWrapper, DCTOText, DiscountText, RateTimeText, RateImage } from './styles'
+import { Card, BrandImage, DiscountWrapper, RateTimeWrapper, DCTOText, DiscountText, RateTimeText, Brand } from './styles'
 
 interface IPros {
   sourceImage: ImageSourcePropType
@@ -21,10 +21,9 @@ const RestaurantCard: React.FC<IPros> = ({ sourceImage, discount, title, rate, t
         <DiscountText>{discount}%</DiscountText>
         <DCTOText>DCTO</DCTOText>
       </DiscountWrapper>
-      <Text>{title}</Text>
+      <Brand>{title}</Brand>
       <RateTimeWrapper>
-        <RateImage source={Images.star} />
-        <RateTimeText>{rate} </RateTimeText>
+        <Rate rate={rate} />
         <RateTimeText>{time}</RateTimeText>
       </RateTimeWrapper>
     </Card>

@@ -1,5 +1,7 @@
 import Fonts from './fonts'
 import { Images } from './images'
+import { Platform } from 'react-native'
+import { css } from 'styled-components/native'
 
 export { Fonts, Images }
 
@@ -11,23 +13,22 @@ const theme = {
     menta: '#06BAA4',
     black: '#000000'
   },
-  margin: {
-    marginSmall: '1%',
-    marginStandard: '2%',
-    marginMedium: '4%',
-    marginLarge: '6%',
-    marginXL: '7%'
-  },
-  padding: {
-    paddingSmall: '2%',
-    paddingStandard: '3%',
-    paddingMedium: '4%',
-    paddingLarge: '5%',
-    paddingXL: '7%',
-    paddingXXL: '13%'
-  },
   fonts: Fonts,
-  images: Images
+  images: Images,
+  getShadowProperties: () => {
+    if (Platform.OS === 'ios') {
+      return css`
+        shadow-color: #000;
+        shadow-offset: 0px 2px;
+        shadow-opacity: 0.5;
+        shadow-radius: 4px;
+      `
+    } else {
+      return css`
+        elevation: 5;
+      `
+    }
+  }
 }
 
 export default theme

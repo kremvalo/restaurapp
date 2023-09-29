@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 
-const Card = styled.View`
-  background-color: ${props => props.theme.color.white};
+const Card = styled.TouchableOpacity`
+  background-color: ${({ theme: { color } }) => color.white};
   marginTop: 15px;
   justifyContent: center;
   alignItems: center;
@@ -17,9 +17,9 @@ const CategoryImage = styled.ImageBackground`
 `
 
 const Title = styled.Text`
-  fontFamily: ${props => props.theme.fonts.type.bold};
-  fontSize: ${props => props.theme.fonts.size.h6};
-  color: ${props => props.theme.color.white};
+  fontFamily: ${({ theme: { fonts } }) => fonts.type.bold};
+  fontSize: ${({ theme: { fonts } }) => fonts.size.h6};
+  color: ${({ theme: { color } }) => color.white};
   fontWeight: bold;
 `
 

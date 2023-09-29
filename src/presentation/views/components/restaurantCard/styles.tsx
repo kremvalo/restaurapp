@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 
-const Card = styled.View`
-  background-color: ${props => props.theme.color.white};
+const Card = styled.TouchableOpacity`
+  background-color:${({ theme: { color } }) => color.white};
   marginTop: 15px;
   justifyContent: center;
   alignItems: center;
@@ -13,7 +13,7 @@ const DiscountWrapper = styled.View`
   justifyContent: center;
   alignItems: center;
   borderRadius: 30px;
-  backgroundColor: ${props => props.theme.color.menta};
+  backgroundColor: ${({ theme: { color } }) => color.menta};
   position: absolute;
   right: 10px;
   top: -10px; 
@@ -28,7 +28,8 @@ const BrandImage = styled.Image`
   resizeMode: cover; 
   width: 100px; 
   height: 100px; 
-  borderRadius: 20px; 
+  borderRadius: 20px;
+  marginBottom: 6px;
 `
 const RateImage = styled.Image`
   resizeMode: cover; 
@@ -37,20 +38,27 @@ const RateImage = styled.Image`
   marginRight: 2px; 
 `
 
+const Brand = styled.Text`
+  fontFamily: ${({ theme: { fonts } }) => fonts.type.light};
+  fontSize: ${({ theme: { fonts } }) => fonts.size.small};
+  color: ${({ theme: { color } }) => color.black};
+`
+
 const RateTimeText = styled.Text`
-  fontFamily: ${props => props.theme.fonts.type.light};
-  fontSize: ${props => props.theme.fonts.size.small};
+  fontFamily: ${({ theme: { fonts } }) => fonts.type.light};
+  fontSize: ${({ theme: { fonts } }) => fonts.size.tiny};
+  color: ${({ theme: { color } }) => color.black};
 `
 const DiscountText = styled.Text`
-  fontFamily: ${props => props.theme.fonts.type.light};
-  fontSize: ${props => props.theme.fonts.size.smallTiny};
-  color: ${props => props.theme.color.white};
+  fontFamily: ${({ theme: { fonts } }) => fonts.type.light};
+  fontSize: ${({ theme: { fonts } }) => fonts.size.smallTiny};
+  color: ${({ theme: { color } }) => color.white};
 `
 
 const DCTOText = styled.Text`
-  fontFamily: ${props => props.theme.fonts.type.light};
-  fontSize: ${props => props.theme.fonts.size.tiny};
-  color: ${props => props.theme.color.white};
+  fontFamily: ${({ theme: { fonts } }) => fonts.type.light};
+  fontSize: ${({ theme: { fonts } }) => fonts.size.tiny};
+  color: ${({ theme: { color } }) => color.white};
 `
 
-export { Card, BrandImage, DiscountWrapper, RateTimeWrapper, RateTimeText, DCTOText, DiscountText, RateImage }
+export { Card, BrandImage, DiscountWrapper, RateTimeWrapper, RateTimeText, DCTOText, DiscountText, Brand, RateImage }
