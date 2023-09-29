@@ -1,14 +1,22 @@
-import React from 'react';
-import Home from './src/framework/presentation/views/screens/home';
-import 'react-native-gesture-handler';
+import React from 'react'
+import { ThemeProvider } from 'styled-components/native'
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
 
+import Home from './src/presentation/views/screens/home/home'
+import './src/translations/i18n.config'
 
-const App = () => {
+import theme from './src/themes'
+
+const App: React.FC = () => {
   return (
     <>
-      <Home />
+      <GestureHandlerRootView>
+        <ThemeProvider theme={theme}>
+          <Home />
+        </ThemeProvider>
+      </GestureHandlerRootView>
     </>
-  );
-};
+  )
+}
 
-export default App;
+export default App
