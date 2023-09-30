@@ -17,6 +17,10 @@ import com.swmansion.gesturehandler.RNGestureHandlerPackage;
 import com.zoontek.rnlocalize.RNLocalizePackage;
 // react-native-reanimated
 import com.swmansion.reanimated.ReanimatedPackage;
+// react-native-safe-area-context
+import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
+// react-native-screens
+import com.swmansion.rnscreens.RNScreensPackage;
 
 public class PackageList {
   private Application application;
@@ -64,7 +68,9 @@ public class PackageList {
       new MainReactPackage(mConfig),
       new RNGestureHandlerPackage(),
       new RNLocalizePackage(),
-      new ReanimatedPackage()
+      new ReanimatedPackage(),
+      new SafeAreaContextPackage(),
+      new RNScreensPackage()
     ));
   }
 }

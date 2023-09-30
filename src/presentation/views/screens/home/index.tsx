@@ -2,9 +2,10 @@ import React from 'react'
 import { Dimensions, Image, ScrollView } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { useTranslation } from 'react-i18next'
+import { useNavigation } from '@react-navigation/native'
 
 import { Images } from '../../../../themes'
-
+import { ROUTES } from '../../../../utils'
 import { Wrapper, AddressWrapper, InfoWrapper, Title, AddressImage } from './styles'
 
 import Header from '../../components/header'
@@ -13,7 +14,8 @@ import RestaurantCard from '../../components/restaurantCard'
 import CategoryCard from '../../components/categoryCard'
 import ProductCard from '../../components/productCard'
 
-const Home: React.FC = () => {
+const HomeScreen: React.FC = () => {
+  const navigation = useNavigation()
   const width = Dimensions.get('window').width
   const { t } = useTranslation()
 
@@ -96,7 +98,7 @@ const Home: React.FC = () => {
           height={width / 1.6}
         />
         <AddressWrapper>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => { navigation.navigate(ROUTES.UBICATION) }} >
             <AddressImage source={Images.addAddress} width={width / 1.5} />
           </TouchableOpacity>
           <InfoWrapper>
@@ -125,4 +127,4 @@ const Home: React.FC = () => {
   )
 }
 
-export default Home
+export default HomeScreen
