@@ -1,4 +1,13 @@
 {
   "addressTitle": "Add delivery address",
-  "restaurantsTitle": "RESTAURANTS"
+  "restaurantsTitle": "RESTAURANTS",
+  "categoriesTitle": "CATEGORIES",
+  "yourFavoritesTitle": "FAVORITES",
+  "addressInputPlaceholder": "Write your address",
+  "denyLocationPermission": "Permits denied",
+  "loadingLocationPermission": "Waiting for your location",
+  "requestPermissionAndroidTitle": "Allow 'Tenpo' to access your location while using the app?",
+  "requestPermissionAndroidDescription": "Your current location will be displayed on the map and will be used for directions, search results and estimated time of arrival.",
+  "requestPermissionAndroidButtonPossitive": "Ok",
+  "requestPermissionAndroidButtonNegative": "Cancel"
 }

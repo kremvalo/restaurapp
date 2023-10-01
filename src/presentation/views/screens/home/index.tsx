@@ -1,18 +1,18 @@
 import React from 'react'
 import { Dimensions, Image, ScrollView } from 'react-native'
-import { TouchableOpacity } from 'react-native-gesture-handler'
 import { useTranslation } from 'react-i18next'
 import { useNavigation } from '@react-navigation/native'
 
 import { Images } from '../../../../themes'
 import { ROUTES } from '../../../../utils'
-import { Wrapper, AddressWrapper, InfoWrapper, Title, AddressImage } from './styles'
+import { Wrapper, AddressWrapper, InfoWrapper, Title } from './styles'
 
 import Header from '../../components/header'
 import CustomCarousel from '../../components/carousel'
 import RestaurantCard from '../../components/restaurantCard'
 import CategoryCard from '../../components/categoryCard'
 import ProductCard from '../../components/productCard'
+import AddAddressButton from '../../components/addAddressButton'
 
 const HomeScreen: React.FC = () => {
   const navigation = useNavigation()
@@ -98,9 +98,7 @@ const HomeScreen: React.FC = () => {
           height={width / 1.6}
         />
         <AddressWrapper>
-          <TouchableOpacity onPress={() => { navigation.navigate(ROUTES.UBICATION) }} >
-            <AddressImage source={Images.addAddress} width={width / 1.5} />
-          </TouchableOpacity>
+          <AddAddressButton onPress={() => { navigation.navigate(ROUTES.UBICATION) }} />
           <InfoWrapper>
             <Title>{t('restaurantsTitle')}</Title>
             <CustomCarousel
@@ -108,13 +106,13 @@ const HomeScreen: React.FC = () => {
               itemsPerScreen={3}
               height={width / 2.2}
             />
-            <Title>CATEGORIAS</Title>
+            <Title>{t('categoriesTitle')}</Title>
             <CustomCarousel
               data={categorySlides}
               itemsPerScreen={3}
               height={width / 3.5}
             />
-            <Title>TUS FAVORITOS</Title>
+            <Title>{t('yourFavoritesTitle')}</Title>
             <CustomCarousel
               data={productsSlides}
               itemsPerScreen={2}

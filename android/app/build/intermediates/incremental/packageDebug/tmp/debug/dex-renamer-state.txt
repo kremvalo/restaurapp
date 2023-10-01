@@ -1,4 +1,4 @@
-#Fri Sep 29 18:53:42 COT 2023
+#Sat Sep 30 18:24:37 COT 2023
 base.0=/Users/karenmoreno/Desktop/PruebasTecnicas/Tenpo/restaurapp/android/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/Users/karenmoreno/Desktop/PruebasTecnicas/Tenpo/restaurapp/android/app/build/intermediates/dex/debug/mergeLibDexDebug/0/classes.dex
 base.2=/Users/karenmoreno/Desktop/PruebasTecnicas/Tenpo/restaurapp/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex

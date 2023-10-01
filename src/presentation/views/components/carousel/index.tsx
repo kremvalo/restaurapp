@@ -2,7 +2,7 @@ import React, { type ReactNode } from 'react'
 import { Dimensions, View } from 'react-native'
 import Carousel from 'react-native-reanimated-carousel'
 
-interface IPros {
+interface IProps {
   data: ReactNode[]
   itemsPerScreen: number
   autoplay?: boolean
@@ -10,7 +10,7 @@ interface IPros {
   height: number
 }
 
-const CustomCarousel: React.FC<IPros> = ({ data, autoplay = false, loop = false, itemsPerScreen, height }) => {
+const CustomCarousel: React.FC<IProps> = ({ data, autoplay = false, loop = false, itemsPerScreen, height }) => {
   const width = Dimensions.get('window').width
 
   return (

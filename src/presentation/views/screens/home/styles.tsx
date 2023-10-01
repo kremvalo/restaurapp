@@ -10,12 +10,6 @@ const AddressWrapper = styled.View`
   marginTop: -30px;
 `
 
-const AddressImage = styled.Image`
-  resizeMode: contain;
-  marginHorizontal: 15%;
-  width: ${({ width }) => width ?? 0}px;
-`
-
 const Title = styled.Text`
   fontFamily: ${({ theme: { fonts } }) => fonts.type.black};
   fontSize: ${({ theme: { fonts } }) => fonts.size.h6};
@@ -30,4 +24,4 @@ const InfoWrapper = styled.View`
   ${({ theme }) => theme.getShadowProperties()}
 
 `
-export { Wrapper, AddressWrapper, Title, InfoWrapper, AddressImage }
+export { Wrapper, AddressWrapper, Title, InfoWrapper }
