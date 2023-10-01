@@ -12,6 +12,14 @@
 *.perspectivev3
 *.pbxuser
 
+# Android/IntelliJ
+#
+build/
+.idea
+.gradle
+local.properties
+*.iml
+
 # Xcode
 xcuserdata/
 project.xcworkspace/
