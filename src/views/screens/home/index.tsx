@@ -33,8 +33,8 @@ const HomeScreen: React.FC = () => {
 
   useEffect(() => {
     if (error !== null) {
-      Alert.alert('Ha ocurrido un error', `Por favor intente de nuevo, ${error}`, [
-        { text: 'Intente de nuevo', onPress: () => { dispatch(getRestaurantsAsync()).then(() => { }, () => { }) } }
+      Alert.alert(t('alertTitle'), `${t('alertDescription')} ${error}`, [
+        { text: t('alertButton'), onPress: () => { dispatch(getRestaurantsAsync()).then(() => { }, () => { }) } }
       ], { cancelable: true })
     }
   }, [error])
@@ -53,6 +53,7 @@ const HomeScreen: React.FC = () => {
             rate={item.rating}
             time={item.estimatedTime}
             discount={item.discount}
+            onPress={() => { navigation.navigate(ROUTES.DETAILRESTAURANT, item) }}
           />)
       })
     } else {

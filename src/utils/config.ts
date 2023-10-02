@@ -4,7 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 export default (() => {
   const dev = {
     api: {
-      host: 'https://prueba8.free.beeceptor.com'
+      host: 'https://prueba9.free.beeceptor.com'
     },
     apiHere: {
       host: 'https://revgeocode.search.hereapi.com/v1'

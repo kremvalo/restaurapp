@@ -1,5 +1,5 @@
 import React from 'react'
-import { type ImageSourcePropType } from 'react-native'
+import { type GestureResponderEvent, type ImageSourcePropType } from 'react-native'
 
 import Rate from '../rate'
 
@@ -11,11 +11,12 @@ interface IPros {
   rate: number
   time: string
   discount: number
+  onPress?: (event: GestureResponderEvent) => void
 }
 
-const RestaurantCard: React.FC<IPros> = ({ sourceImage, discount, title, rate, time }) => {
+const RestaurantCard: React.FC<IPros> = ({ sourceImage, discount, title, rate, time, onPress }) => {
   return (
-    <Card>
+    <Card onPress={onPress}>
       <BrandImage source={sourceImage} />
       <DiscountWrapper>
         <DiscountText>{discount}%</DiscountText>

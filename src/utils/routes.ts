@@ -1,4 +1,5 @@
 export default {
   HOME: 'Home',
-  UBICATION: 'Ubication'
+  UBICATION: 'Ubication',
+  DETAILRESTAURANT: 'DetailRestaurant'
 }

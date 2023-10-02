@@ -5,6 +5,7 @@ import { HomeScreen, AddAddressScreen } from '../views/screens'
 
 import { ROUTES } from '../utils'
 import theme from '../themes'
+import DetailRestaurantScreen from '../views/screens/restaurantDetail'
 
 const Stack = createStackNavigator()
 
@@ -24,6 +25,19 @@ function AppNavigator(): React.JSX.Element {
         },
         headerTintColor: theme.color.menta
       }} />
+      <Stack.Screen name={ROUTES.DETAILRESTAURANT} options={{
+        title: '',
+        headerStyle: {
+          backgroundColor: theme.color.cian
+        },
+        headerBackTitleVisible: false,
+        headerBackTitleStyle: {
+          color: theme.color.menta
+        },
+        headerTintColor: theme.color.menta
+      }}>
+        {props => <DetailRestaurantScreen {...props} restaurant={props.route.params} />}
+      </Stack.Screen>
     </Stack.Navigator>
   )
 }

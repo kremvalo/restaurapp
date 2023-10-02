@@ -9,5 +9,8 @@
     "requestPermissionAndroidTitle": "¿Permitir que 'Tenpo' acceda a tu ubicaciòn mientras usas la app?",
     "requestPermissionAndroidDescription": "Tu ubicaciòn actual se mostrara en el mapa y se usara para las indicaciones, los resultados de busqueda y la hora aproximada de llegada",
     "requestPermissionAndroidButtonPossitive": "Aceptar",
-    "requestPermissionAndroidButtonNegative": "Cancelar"
+    "requestPermissionAndroidButtonNegative": "Cancelar",
+    "alertTitle": "Ha ocurrido un error",
+    "alertDescription": "Por favor intente de nuevo,",
+    "alertButton": "Intente de nuevo"
 }
