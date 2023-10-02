@@ -7,16 +7,16 @@ import { Images } from '../../../themes'
 import { AddressWrapper, PointImage, AddressText } from './styles'
 
 interface IProps {
+  title?: string
   onPress?: (event: GestureResponderEvent) => void
 }
 
-const AddAddressButton: React.FC<IProps> = ({ onPress }) => {
+const AddAddressButton: React.FC<IProps> = ({ title = null, onPress }) => {
   const { t } = useTranslation()
-
   return (
     <AddressWrapper onPress={onPress}>
       <PointImage source={Images.point} />
-      <AddressText>{t('addressTitle')} </AddressText>
+      <AddressText>{title ?? t('addressTitle')} </AddressText>
     </AddressWrapper>
   )
 }

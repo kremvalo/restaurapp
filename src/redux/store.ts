@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 
-import restaurantReducer from '../views/screens/home/slice'
+import restaurantReducer from '../views/screens/slice'
 
 const store = configureStore({
   reducer: {

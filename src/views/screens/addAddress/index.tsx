@@ -27,15 +27,21 @@ import { LocationStatus } from '../../../utils'
 import AddAddressButton from '../../components/addAddressButton'
 import CustomButton from '../../components/button'
 import { Images } from '../../../themes'
+import { getAddressAsync, setAddressAditional, setDeliveryAddress } from '../slice'
+import { useDispatch, useSelector } from 'react-redux'
+import { type AppDispatch } from '../../../redux/store'
+import { useNavigation } from '@react-navigation/native'
+import { type ICoordinate } from '../../../types'
 
 const AddAddressScreen: React.FC = () => {
+  const dispatch = useDispatch<AppDispatch>()
+  const navigation = useNavigation()
   const { t } = useTranslation()
   const LATITUDE = 40.665364
   const LONGITUDE = -74.213377
   const LATITUDE_DELTA = 0.0043
   const LONGITUDE_DELTA = 0.0034
 
-  const [value, setValue] = useState('')
   const [
     currentLongitude,
     setCurrentLongitude
@@ -49,6 +55,10 @@ const AddAddressScreen: React.FC = () => {
     setLocationStatus
   ] = useState<LocationStatus>()
 
+  const { address, adicionalInfoAddress } = useSelector((state: any) => state.restaurant)
+
+  const [value, setValue] = useState(address)
+
   const getOneTimeLocation = async (): Promise<void> => {
     setLocationStatus(LocationStatus.LOADING)
     Geolocation.getCurrentPosition(
@@ -57,6 +67,13 @@ const AddAddressScreen: React.FC = () => {
 
         setCurrentLongitude(position.coords.longitude)
         setCurrentLatitude(position.coords.latitude)
+
+        const data: ICoordinate = {
+          long: position.coords.longitude,
+          lat: position.coords.latitude
+        }
+
+        dispatch(getAddressAsync(data)).then(() => { }, () => { })
       },
       (error) => {
         setLocationStatus(LocationStatus.DENY)
@@ -155,8 +172,15 @@ const AddAddressScreen: React.FC = () => {
           <AddressComplementWrapper>
             <Title>Agregar informacion de entrega</Title>
             <Subtitle>Depto, Oficina, Piso, Block</Subtitle>
-            <AddressComplementInput multiline numberOfLines={5} />
-            <CustomButton text={'AGREGAR DIRECCION'} />
+            <AddressComplementInput multiline numberOfLines={5} onChangeText={(value) => dispatch(setAddressAditional(value))} value={adicionalInfoAddress} />
+            <CustomButton text={'AGREGAR DIRECCION'} onPress={() => {
+              dispatch(setDeliveryAddress({
+                address: value,
+                adicionalInfoAddress
+              }))
+              navigation.goBack()
+            }
+            } />
           </AddressComplementWrapper>
         </Wrapper >
       </TouchableWithoutFeedback>

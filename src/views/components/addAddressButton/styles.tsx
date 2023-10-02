@@ -18,5 +18,9 @@ const AddressText = styled.Text`
   fontFamily: ${({ theme: { fonts } }) => fonts.type.bold};
   fontSize: ${({ theme: { fonts } }) => fonts.size.h6};
   color: ${({ theme: { color } }) => color.menta};
+  flexWrap: wrap;
+  width: 80%;
+  justifyContent: center;
+  textAlign: center;
 `
 export { AddressWrapper, PointImage, AddressText }

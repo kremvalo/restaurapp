@@ -1,13 +1,14 @@
-import React, { useEffect } from 'react'
-import { Dimensions, Image, ScrollView } from 'react-native'
+import React, { useEffect, useMemo } from 'react'
+import { Dimensions, Image, ScrollView, Alert } from 'react-native'
 import { useTranslation } from 'react-i18next'
 import { useNavigation } from '@react-navigation/native'
 import { useDispatch, useSelector } from 'react-redux'
+import * as RA from 'ramda-adjunct'
 
 import { Images } from '../../../themes'
 import { ROUTES } from '../../../utils'
 import { Wrapper, AddressWrapper, InfoWrapper, Title } from './styles'
-import { getRestaurantsAsync } from './slice'
+import { getRestaurantsAsync } from '../slice'
 
 import Header from '../../components/header'
 import CustomCarousel from '../../components/carousel'
@@ -16,7 +17,7 @@ import CategoryCard from '../../components/categoryCard'
 import ProductCard from '../../components/productCard'
 import AddAddressButton from '../../components/addAddressButton'
 import { type AppDispatch } from '../../../redux/store'
-import { type IRestaurant } from '../../types'
+import { type IRestaurant } from '../../../types'
 
 const HomeScreen: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>()
@@ -24,29 +25,39 @@ const HomeScreen: React.FC = () => {
   const width = Dimensions.get('window').width
   const { t } = useTranslation()
 
-  const { restaurantsData, loading } = useSelector((state: any) => state.restaurant)
-
-  console.log('restaurantsData', restaurantsData)
+  const { restaurantsData, loading, error, addressDelivery } = useSelector((state: any) => state.restaurant)
 
   useEffect(() => {
     dispatch(getRestaurantsAsync()).then(() => { }, () => { })
   }, [dispatch])
 
-  const imagesSlides: React.ReactNode[] = [
+  useEffect(() => {
+    if (error !== null) {
+      Alert.alert('Ha ocurrido un error', `Por favor intente de nuevo, ${error}`, [
+        { text: 'Intente de nuevo', onPress: () => { dispatch(getRestaurantsAsync()).then(() => { }, () => { }) } }
+      ], { cancelable: true })
+    }
+  }, [error])
+
+  const imagesSlides: React.ReactNode[] = useMemo(() => [
     <Image key={Images.slide} source={Images.slide} style={{ resizeMode: 'contain', width, height: width / 1.7 }} />
-  ]
+  ], [])
 
   const renderRestaurants = (restaurants: IRestaurant[]): React.ReactNode[] => {
-    return restaurants.map((item: IRestaurant) => {
-      return (
-        <RestaurantCard key={item.id}
-          sourceImage={{ uri: item.image }}
-          title={item.name}
-          rate={item.rating}
-          time={item.estimatedTime}
-          discount={item.discount}
-        />)
-    })
+    if (RA.isArray(restaurants) && RA.isNonEmptyArray(restaurants)) {
+      return restaurants.map((item: IRestaurant) => {
+        return (
+          <RestaurantCard key={item.id}
+            sourceImage={{ uri: item.image }}
+            title={item.name}
+            rate={item.rating}
+            time={item.estimatedTime}
+            discount={item.discount}
+          />)
+      })
+    } else {
+      return [] as React.ReactNode[]
+    }
   }
 
   const categorySlides: React.ReactNode[] = [
@@ -93,9 +104,12 @@ const HomeScreen: React.FC = () => {
           height={width / 1.6}
         />
         <AddressWrapper>
-          <AddAddressButton onPress={() => { navigation.navigate(ROUTES.UBICATION) }} />
+
+          <AddAddressButton
+            title={addressDelivery.address}
+            onPress={() => { navigation.navigate(ROUTES.UBICATION) }} />
           {
-            !loading &&
+            (loading !== true && error === null) &&
             <InfoWrapper>
               <Title>{t('restaurantsTitle')}</Title>
               <CustomCarousel
