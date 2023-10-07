@@ -1,14 +1,61 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Restaurapp
 
-# Getting Started
+Aplicación movil en la que se puede ver restaurantes disponibles asì como categorias y productos favoritos. Ademas se puede tambien agregar una direcciòn de entrega dejando por defecto la dirección de ubicaciòn del usuario. 
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+Aplicación desarrollada por Karen Moreno Arevalo, kren.thinker@gmail.com
 
-## Step 1: Start the Metro Server
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+| Visual del App | Visual del App | Visual del App | Visual del App | Visual del App |
+| ---      | ---       | ---       | ---       | ---       |
+| ![simulator_screenshot_04EB2733-AB62-44AE-BC4C-BC1958691392](https://github.com/kremvalo/restaurapp/assets/32576306/2f327f61-854c-4142-ac4a-1cfe89f0613d) | ![simulator_screenshot_3745C2CD-018B-4480-9A07-DB3DFC05111C](https://github.com/kremvalo/restaurapp/assets/32576306/a930fc63-53e2-436e-9fe1-a438417f5c0a) | ![simulator_screenshot_B0DD96DC-AE39-4BC9-8CF2-C03F2B17695C](https://github.com/kremvalo/restaurapp/assets/32576306/d1126851-5680-442e-a8a9-1d23f7086192) | ![simulator_screenshot_97A50CDB-1206-4C2B-A72E-DDD0D81040EB](https://github.com/kremvalo/restaurapp/assets/32576306/3dfed0b6-3601-45c6-9538-99340fbd1a8c) | ![simulator_screenshot_435CD12E-4C26-4CB3-8C24-9784FD1A023D](https://github.com/kremvalo/restaurapp/assets/32576306/0a8f2960-8a2b-4102-925a-8d735e142913) |
 
-To start Metro, run the following command from the _root_ of your React Native project:
+
+
+
+Construida con React Native y las siguientes herramientas adicionales: 
+
+| Name     | Descripcion |
+| ---      | ---       |
+| Redux Toolkit | Manejador de estado |
+| I18n     | Internacionalizaciòn        |
+| Styled Components     | Manejo de estilos visuales        |
+| React Native Maps     | Manejo de mapas en React Native        |
+| Reverse Geocoding (Here)     | Api para obtener una direcciòn apartir de latitud y longitud        |
+| Typescript     | Lenguaje tipado        |
+
+
+# Como empezar
+
+>**Note**: Asegurate de tener configurado tu entorno para correr aplicaciones en React Native. Por si no lo tienes las instrucciones las encuentras aquí [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup).
+
+
+## Paso 1: Clonar proyecto: 
+
+Primero que todo asegurate de clonar el proyecto en tu equipo. 
+
+## Paso 2: Instalar dependencias: 
+
+Abre una terminal o consola en tu equipo apuntando a la ruta en la cual clonaste el proyecto. 
+Luego de eso, ejecuta el siguiente comando: 
+
+```bash
+# using npm
+npm i
+
+# OR using Yarn
+yarn
+```
+## Paso 3: Verifica que tengas un dispositivo movil fisico o un emulador configurado: 
+
+### Instrucciones Android
+
+- En dado caso que no desees correr la aplicaciòn en tu dispositivo fisico, conectalo a tu equipo (pc, laptop) y verifica que el telefono tiene habilitado el modo desarrollador y permite el debug de aplicaciones en el.
+- En el caso que prefieras un emulador y aun no lo tengas instalado y configurado, mira las siguientes instrucciones  [Configuración Emulador Android](https://developer.android.com/studio/run/emulator?hl=es-419)
+
+## Paso 4: Ejecutar Metro: 
+
+Abre una terminal o consola en tu equipo apuntando a la ruta en la cual clonaste el proyecto. 
+Luego de eso ejecuta el siguiente comando: 
 
 ```bash
 # using npm
@@ -18,62 +65,38 @@ npm start
 yarn start
 ```
 
-## Step 2: Start your Application
+## Paso 5: Ejecutar Aplicación: 
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+Abre una terminal o consola en tu equipo apuntando a la ruta en la cual clonaste el proyecto. 
 
-### For Android
-
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### For iOS
+### Android 
+Luego ejecuta el siguiente comando: 
 
 ```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+# using npx
+npx react-native run-android
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+### IOS 
+Luego ejecuta el siguiente comando: 
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+```bash
+# using npx
+npx react-native run-ios
 
-## Step 3: Modifying your App
+```
 
-Now that you have successfully run the app, let's modify it.
+## Step 1: Start the Metro Server
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+To start Metro, run the following command from the _root_ of your React Native project:
 
-## Congratulations! :tada:
 
-You've successfully run and modified your React Native App. :partying_face:
+## Felicitaciones! :tada:
 
-### Now what?
+Corriste exitosamente la aplicación. :partying_face:
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+# Problemas
 
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Si no lograste ejecutar la aplicaciòn consulta esta [documentación](https://reactnative.dev/docs/troubleshooting).
