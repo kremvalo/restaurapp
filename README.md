@@ -2,8 +2,6 @@
 
 Aplicación movil en la que se puede ver restaurantes disponibles asì como categorias y productos favoritos. Ademas se puede tambien agregar una direcciòn de entrega dejando por defecto la dirección de ubicaciòn del usuario. 
 
-Aplicación desarrollada por Karen Moreno Arevalo, kren.thinker@gmail.com
-
 
 | Visual del App | Visual del App | Visual del App | Visual del App | Visual del App |
 | ---      | ---       | ---       | ---       | ---       |
